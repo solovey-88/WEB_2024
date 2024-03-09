@@ -2,6 +2,7 @@
 
 //task 1
 echo "TASK 1", "<br />";
+
 $very_bad_unclear_name = "15 chicken wings";
 // Write your code here:
 $order = &$very_bad_unclear_name;
@@ -12,6 +13,7 @@ echo "\nYour order is: $very_bad_unclear_name.", "<br />", "<br />";
 
 //task 2
 echo "TASK 2", "<br />";
+
 $number1 = 5;
 echo $number1, "<br />";
 
@@ -24,3 +26,14 @@ echo 1000 - 988, "<br />";
 $last_month = 1187.23;
 $this_month = 1089.98;
 echo $this_month - $last_month, "<br />", "<br />";
+
+//task 11
+echo "TASK 11", "<br />";
+
+$num_languages = 4;
+$months = 11;
+$days = $months * 16;
+
+$days_per_language = $days / $num_languages;
+echo $days_per_language, "<br />";
+
