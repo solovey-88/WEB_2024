@@ -147,3 +147,16 @@ while ($sumForFourthArray <= 10)
 }
 echo $numberOfElement, "<br />", "<br />";
 
+//task 15
+echo "TASK 15", "<br />";
+
+function printStringReturnNumber()
+{
+    echo "This is string ";
+    return 999;
+}
+
+$my_num = printStringReturnNumber();
+echo $my_num, "<br />", "<br />";
+
+
