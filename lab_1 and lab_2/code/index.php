@@ -328,11 +328,11 @@ else
     }
     if ($sumAge <= 9)
     {
-        echo "Сумма цифр однозначна" . "<br />";
+        echo "Сумма цифр однозначна", "<br />";
     }
     else
     {
-        echo "Сумма цифр двузначна" . "<br />";
+        echo "Сумма цифр двузначна", "<br />";
     }
 }
 
@@ -344,9 +344,18 @@ if (count($mySixthArray) == 3)
     {
         $sumOfElements += $value;
     }
-    echo $sumOfElements, "<br />";
+    echo $sumOfElements, "<br />" , "<br />";
 }
 else
 {
-    echo "Массив не содержит трёх элементов" . "<br />";
+    echo "Массив не содержит трёх элементов", "<br />", "<br />";
 }
+
+//task 19
+echo "TASK 19", "<br />";
+
+for ($i = 1; $i < 21; $i++)
+{
+    echo str_repeat('x', $i), "<br />";
+}
+echo "<br />", "<br />";
