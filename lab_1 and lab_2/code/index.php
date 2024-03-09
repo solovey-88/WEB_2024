@@ -277,7 +277,76 @@ echo count($arrSymbol), "<br />";
 
 $arrSymbolSecond = ['a', 'b', 'c', 'd', 'e'];
 echo $arrSymbolSecond[count($arrSymbolSecond) - 1], "<br />";
-echo $arrSymbolSecond[count($arrSymbolSecond) - 2], "<br />";
+echo $arrSymbolSecond[count($arrSymbolSecond) - 2], "<br />", "<br />";
 
+//task 18
+echo "TASK 18", "<br />";
 
+$number3 = 3;
+$number4 = 3;
 
+function sumCheck($element1, $element2)
+{
+    if ($element1 + $element2 > 10)
+    {
+        return "true";
+    }
+    else
+    {
+        return "false";
+    }
+}
+
+function equationCheck($element1, $element2)
+{
+    if ($element1 == $element2)
+    {
+        return "true";
+    }
+    else
+    {
+        return "false";
+    }
+}
+
+echo sumCheck($number3, $number4), "<br />";
+echo equationCheck($number3, $number4), "<br />";
+
+$age = 60;
+if ($age < 10 || $age > 99)
+{
+    echo "This age out of range";
+}
+else
+{
+    $sumAge = 0;
+    while ($age > 0)
+    {
+        $digit = $age % 10;
+        $sumAge += $digit;
+        $age = (int)($age / 10);
+    }
+    if ($sumAge <= 9)
+    {
+        echo "Сумма цифр однозначна" . "<br />";
+    }
+    else
+    {
+        echo "Сумма цифр двузначна" . "<br />";
+    }
+}
+
+$mySixthArray = [100, 250, 500];
+if (count($mySixthArray) == 3)
+{
+    $sumOfElements = 0;
+    foreach ($mySixthArray as $value)
+    {
+        $sumOfElements += $value;
+    }
+    echo $sumOfElements, "<br />";
+}
+else
+{
+    echo "Массив не содержит трёх элементов" . "<br />";
+}
