@@ -215,4 +215,69 @@ function sumDigits($number)
         return $sumOfNumbers;
     }
 }
-echo sumDigits(55555), "<br />";
+echo sumDigits(55555), "<br />", "<br />";
+
+//task 17
+echo "TASK 17", "<br />";
+
+function arrayFill($element, $number)
+{
+    $array = [];
+    for($i = 0; $i < $number; $i++)
+    {
+        $array[$i] = $element;
+    }
+    foreach ($array as $value)
+    {
+        echo $value . " ";
+    }
+}
+
+arrayFill('x', 5);
+echo "<br />";
+
+$twoDimArray = [[1, 2, 3], [4, 5], [6]];
+$sumOfArray = 0;
+foreach ($twoDimArray as $value)
+{
+    $sumOfArray += array_sum($value);
+}
+echo $sumOfArray, "<br />";
+
+$myTwoDimArray = [];
+$valueOfArray = 1;
+for ($i = 0; $i < 3; $i++)
+{
+    $subArray = [];
+    for($j = 0; $j < 3; $j++)
+    {
+        $subArray[] = $valueOfArray++;
+    }
+    $myTwoDimArray[] = $subArray;
+}
+foreach ($myTwoDimArray as $subArray) {
+    foreach ($subArray as $value) {
+        echo $value . " ";
+    }
+    echo "<br>";
+}
+
+$arrayOfNumbers = [2, 5, 3, 9];
+$result = ($arrayOfNumbers[0] * $arrayOfNumbers[1]) + ($arrayOfNumbers[2] * $arrayOfNumbers[3]);
+echo $result, "<br />";
+
+$user = ["name" => "Ivan", "surname" => "Ivanov", "patronymic" => "Ivanovich"];
+echo $user["surname"] . " " . $user["name"] . " " . $user["patronymic"] . "<br />";
+
+$date = ["year" => "2024", "month" => "03", "day" => "09"];
+echo $date["year"] . "-" . $date["month"] . "-" . $date["day"] . "<br />";
+
+$arrSymbol = ['a', 'b', 'c', 'd', 'e'];
+echo count($arrSymbol), "<br />";
+
+$arrSymbolSecond = ['a', 'b', 'c', 'd', 'e'];
+echo $arrSymbolSecond[count($arrSymbolSecond) - 1], "<br />";
+echo $arrSymbolSecond[count($arrSymbolSecond) - 2], "<br />";
+
+
+
