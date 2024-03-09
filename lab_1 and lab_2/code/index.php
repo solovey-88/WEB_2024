@@ -1,5 +1,6 @@
 <?php
 
+//красивого вывода не будет, иначе могу к дедлайну не успеть.
 //task 1
 echo "TASK 1", "<br />";
 
@@ -15,32 +16,33 @@ echo "\nYour order is: $very_bad_unclear_name.", "<br />", "<br />";
 echo "TASK 2", "<br />";
 
 $number1 = 5;
-echo $number1, "<br />";
+echo "Первое число в PHP = ", $number1, "<br />";
 
 $number2 = 5.25;
-echo $number2, "<br />";
+echo "Второе число в PHP = ", $number2, "<br />";
 
 echo 1000 - 988, "<br />";
 
-
+//задача с месяцами
 $last_month = 1187.23;
 $this_month = 1089.98;
-echo $this_month - $last_month, "<br />", "<br />";
+echo "Разность между месяцами = ", $this_month - $last_month, "<br />", "<br />";
 
 //task 11
 echo "TASK 11", "<br />";
 
+//задача с языками программирования
 $num_languages = 4;
 $months = 11;
 $days = $months * 16;
 
 $days_per_language = $days / $num_languages;
-echo $days_per_language, "<br />", "<br />";
+echo "На изучение каждого языка программирования ушло: ", $days_per_language, "<br />", "<br />";
 
 //task 12
 echo "TASK 12", "<br />";
 
-echo 8**2, "<br />", "<br />";
+echo "Восемь в квадрате = ",  8**2, "<br />", "<br />";
 
 //task 13
 echo "TASK 13", "<br />";
@@ -52,15 +54,17 @@ $answer *= 2;
 $answer -= 2;
 $answer /= 2;
 $answer -= $my_num;
-echo $answer, "<br />", "<br />";
+echo "Разница между ответом и исходным значением = ", $answer, "<br />", "<br />";
 
 //task 14
 echo "TASK 14", "<br />";
 
+//Поиск остатка деления
 $a = 10;
 $b = 3;
-echo $a % $b, "<br />";
+echo "Остаток от деления = ", $a % $b, "<br />";
 
+//Проверка делимости чисел
 if ($a % $b == 0)
 {
     echo "Делится", $a / $b, "<br />";
@@ -72,56 +76,72 @@ else
 }
 
 $st = 2**10;
-echo $st, "<br />";
-echo sqrt(245), "<br />";
+echo "Два в десятой степени = ", $st, "<br />";
+echo "Корень из 245 = ", sqrt(245), "<br />";
 
+//Поиск корня из суммы квадратов элементов массива
 $myFirstArray = [4, 2, 5, 19, 13, 0, 10];
 $sum = 0;
 foreach ($myFirstArray as $value)
 {
     $sum += pow($value, 2);
 }
-echo sqrt($sum), "<br />";
+echo "Корень суммы квадратов = ", sqrt($sum), "<br />";
 
+// Округление до десятых и сотых
 echo round(sqrt(379)), "<br />";
-echo round((sqrt(379)), 1), "<br />";
-echo round((sqrt(379)), 2), "<br />";
+echo "Округление до десятых = ", round((sqrt(379)), 1), "<br />";
+echo "Округление до сотых, = ", round((sqrt(379)), 2), "<br />";
 
+//округления числа в большую и меньшую сторону
 $sqrt587 = sqrt(587);
 $resultArray = ['floor' => floor($sqrt587), 'ceil' => ceil($sqrt587)];
-echo $resultArray['floor'], "<br />";
-echo $resultArray['ceil'], "<br />";
+echo "Округление числа в меньшую сторону = ", $resultArray['floor'], "<br />";
+echo "Округление числа в большую сторону = ", $resultArray['ceil'], "<br />";
 
 $mySecondArray = [4, -2, 5, 19, -130, 0, 10];
-echo min($mySecondArray), "<br />";
-echo max($mySecondArray), "<br />";
+echo "Минимальное значение = ", min($mySecondArray), "<br />";
+echo "Максимальное значение = ", max($mySecondArray), "<br />";
 
-echo rand(1, 100), "<br />";
+echo "Рандомное число = ", rand(1, 100), "<br />"; //Вывод рандомного числа
 
+//Массив с рандомными числами
 $randomArray = [];
 for ($i = 0; $i < 10; $i++)
 {
     $randomArray[] = rand(1, 100);
 }
+
+echo "Массив с рандомными элементами: ", "<br />";
 foreach ($randomArray as $value)
 {
     echo $value . " ";
 }
 echo "<br />";
 
-echo abs($a - $b), "<br />";
+//Работа с модулями
+echo "Модуль разности = ", abs($a - $b), "<br />";
 $myThirdArray = [1, 2, -1, -2, 3, -3];
 $absoluteArray = [];
 foreach ($myThirdArray as $value)
 {
     $absoluteArray[] = abs($value);
 }
+echo "Исходный массив: ", "<br />";
+foreach ($myThirdArray as $value)
+{
+    echo $value . " ";
+}
+echo "<br />";
+
+echo "Получившийся массив: ", "<br />";
 foreach ($absoluteArray as $value)
 {
     echo $value . " ";
 }
 echo "<br />";
 
+//Поиск делителя числа
 $number30 = 30;
 $divisionsArray = [];
 for ($i = 1; $i <= $number30; $i++)
@@ -131,12 +151,14 @@ for ($i = 1; $i <= $number30; $i++)
         $divisionsArray[] = $i;
     }
 }
+echo "Делители числа 30: ", "<br />";
 foreach ($divisionsArray as $value)
 {
     echo $value . " ";
 }
 echo "<br />";
 
+//Поиск числа первых элементов для получения суммы > 10
 $myFourthArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 $sumForFourthArray = 0;
 $numberOfElement = 0;
@@ -145,7 +167,7 @@ while ($sumForFourthArray <= 10)
     $sumForFourthArray += $myFourthArray[$numberOfElement];
     $numberOfElement += 1;
 }
-echo $numberOfElement, "<br />", "<br />";
+echo "Количество элементов: ", $numberOfElement, "<br />", "<br />";
 
 //task 15
 echo "TASK 15", "<br />";
@@ -162,7 +184,7 @@ echo $my_num, "<br />", "<br />";
 //task 16
 echo "TASK 16", "<br />";
 
-function  increaseEnthusiasm($string)
+function increaseEnthusiasm($string)
 {
     return $string . "!";
 }
@@ -195,6 +217,7 @@ function Recurs($array, $index = 0)
 }
 
 $myFifthArray = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+echo "Рекурсивный вызов массива: ", "<br />";
 Recurs($myFifthArray);
 echo "<br />";
 
@@ -215,7 +238,7 @@ function sumDigits($number)
         return $sumOfNumbers;
     }
 }
-echo sumDigits(55555), "<br />", "<br />";
+echo "Результат работы функции sumDigits: ", sumDigits(55555), "<br />", "<br />";
 
 //task 17
 echo "TASK 17", "<br />";
@@ -233,6 +256,7 @@ function arrayFill($element, $number)
     }
 }
 
+echo "Резульат работы функции arrayFill: ";
 arrayFill('x', 5);
 echo "<br />";
 
@@ -242,7 +266,7 @@ foreach ($twoDimArray as $value)
 {
     $sumOfArray += array_sum($value);
 }
-echo $sumOfArray, "<br />";
+echo "Сумма элементов двумерного массива: ", $sumOfArray, "<br />";
 
 $myTwoDimArray = [];
 $valueOfArray = 1;
@@ -255,6 +279,7 @@ for ($i = 0; $i < 3; $i++)
     }
     $myTwoDimArray[] = $subArray;
 }
+echo "Создание двумерного массива: ", "<br />";
 foreach ($myTwoDimArray as $subArray) {
     foreach ($subArray as $value) {
         echo $value . " ";
@@ -264,20 +289,20 @@ foreach ($myTwoDimArray as $subArray) {
 
 $arrayOfNumbers = [2, 5, 3, 9];
 $result = ($arrayOfNumbers[0] * $arrayOfNumbers[1]) + ($arrayOfNumbers[2] * $arrayOfNumbers[3]);
-echo $result, "<br />";
+echo "Резульат умножения и сложения элементов массива = ", $result, "<br />";
 
 $user = ["name" => "Ivan", "surname" => "Ivanov", "patronymic" => "Ivanovich"];
-echo $user["surname"] . " " . $user["name"] . " " . $user["patronymic"] . "<br />";
+echo "Имя: ",  $user["surname"] . " " . $user["name"] . " " . $user["patronymic"] . "<br />";
 
 $date = ["year" => "2024", "month" => "03", "day" => "09"];
-echo $date["year"] . "-" . $date["month"] . "-" . $date["day"] . "<br />";
+echo "Дата: ", $date["year"] . "-" . $date["month"] . "-" . $date["day"] . "<br />";
 
 $arrSymbol = ['a', 'b', 'c', 'd', 'e'];
-echo count($arrSymbol), "<br />";
+echo "Количество элементов: ", count($arrSymbol), "<br />";
 
 $arrSymbolSecond = ['a', 'b', 'c', 'd', 'e'];
-echo $arrSymbolSecond[count($arrSymbolSecond) - 1], "<br />";
-echo $arrSymbolSecond[count($arrSymbolSecond) - 2], "<br />", "<br />";
+echo "Последний элемент: ", $arrSymbolSecond[count($arrSymbolSecond) - 1], "<br />";
+echo "Предпоследний элемент: ", $arrSymbolSecond[count($arrSymbolSecond) - 2], "<br />", "<br />";
 
 //task 18
 echo "TASK 18", "<br />";
@@ -309,8 +334,8 @@ function equationCheck($element1, $element2)
     }
 }
 
-echo sumCheck($number3, $number4), "<br />";
-echo equationCheck($number3, $number4), "<br />";
+echo "Результат работы функции sumCheck: ", sumCheck($number3, $number4), "<br />";
+echo "Результат работы функции equationCheck: ", equationCheck($number3, $number4), "<br />";
 
 $age = 60;
 if ($age < 10 || $age > 99)
@@ -344,7 +369,7 @@ if (count($mySixthArray) == 3)
     {
         $sumOfElements += $value;
     }
-    echo $sumOfElements, "<br />" , "<br />";
+    echo "Сумма элементов: ", $sumOfElements, "<br />" , "<br />";
 }
 else
 {
@@ -359,3 +384,32 @@ for ($i = 1; $i < 21; $i++)
     echo str_repeat('x', $i), "<br />";
 }
 echo "<br />", "<br />";
+
+//task 20
+echo "TASK 20", "<br />";
+
+$arrayOfNumber = [4, 9, 16, 64, 100];
+echo "Среднее арифметическое: ", array_sum($arrayOfNumber) / count($arrayOfNumber), "<br />";
+
+echo "Сумма чисел от 1 до 100: ", (1 + 100) * 100 / 2, "<br />";
+
+$arrayOfSqrtRoots = array_map("sqrt", $arrayOfNumber);
+echo "Массив квадратных корней:", "<br />";
+foreach ($arrayOfSqrtRoots as $value)
+{
+    echo $value . " ";
+}
+echo "<br />";
+
+$symbolsArray = range("a", "z");
+$numbersArray = range(1, 26);
+$symbolsAndNumbersArray = array_combine($symbolsArray, $numbersArray);
+foreach ($symbolsAndNumbersArray as $key => $value)
+{
+    echo "[$key] => ", $value . " ";
+}
+echo "<br />";
+
+$finalString = '1234567890';
+$finalSum = array_sum(str_split($finalString, 2));
+echo "Сумма из пар чисел = ", $finalSum;
