@@ -159,4 +159,60 @@ function printStringReturnNumber()
 $my_num = printStringReturnNumber();
 echo $my_num, "<br />", "<br />";
 
+//task 16
+echo "TASK 16", "<br />";
 
+function  increaseEnthusiasm($string)
+{
+    return $string . "!";
+}
+
+$stringForFunction = "Hello World";
+echo increaseEnthusiasm($stringForFunction), "<br />";
+
+function repeatThreeTimes($string)
+{
+    return $string . $string . $string;
+}
+
+echo repeatThreeTimes($stringForFunction), "<br />";
+echo increaseEnthusiasm(repeatThreeTimes($stringForFunction)), "<br />";
+
+function cut($string, $number = 10)
+{
+    return substr($string, $number);
+}
+
+echo cut("55555", 2), "<br />";
+
+function Recurs($array, $index = 0)
+{
+    if ($index < count($array))
+    {
+        echo $array[$index] . " ";
+        Recurs($array, $index + 1);
+    }
+}
+
+$myFifthArray = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+Recurs($myFifthArray);
+echo "<br />";
+
+function sumDigits($number)
+{
+    $sumOfNumbers = 0;
+    while ($number != 0)
+    {
+        $sumOfNumbers += $number % 10;
+        $number = (int)($number / 10);
+    }
+    if ($sumOfNumbers > 9)
+    {
+        return sumDigits($sumOfNumbers);
+    }
+    else
+    {
+        return $sumOfNumbers;
+    }
+}
+echo sumDigits(55555), "<br />";
