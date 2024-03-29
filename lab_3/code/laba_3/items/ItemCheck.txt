@@ -1,4 +1,0 @@
-Email: ahaha@email.com
-Category: items
-Title: ItemCheck
-Text: ItemCheckDescription

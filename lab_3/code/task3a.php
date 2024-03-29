@@ -16,7 +16,7 @@
         <input type="text" name="title" required> <br> <br>
     </label>
     <label for="category">Категория:</label>
-    <select id="category" name="category" required>
+    <select name="category" required>
         <?php
         $categories = array_filter(glob("./categories/*"), 'is_dir');
         foreach ($categories as $name) {
@@ -26,10 +26,10 @@
         ?>
     </select> <br> <br>
     <label for="title">Заголовок объявления:</label>
-    <input type="text" id="title" name="title" required><br><br>
+    <input type="text" name="title" required><br><br>
 
     <label for="text">Текст объявления:</label><br>
-    <textarea id="text" name="text" rows="4" cols="50" required></textarea> <br> <br>
+    <textarea name="text" rows="4" cols="50" required></textarea> <br> <br>
 
     <input type="submit" value="Добавить">
 </form>
