@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
         <label for="age">Возраст:</label>
         <input type="text" name="age" required><br><br>
-        
+
         <button type="submit">Подтвердить</button>
     </form>
 
