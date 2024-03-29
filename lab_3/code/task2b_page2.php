@@ -14,7 +14,7 @@ $age = isset($_SESSION['age']) ? $_SESSION['age'] : '';
 	<title>Document</title>
 </head>
 <body>
-	<h2>Данные из сессии:</h2>
+	<h2>Полученные данные:</h2>
     <p><strong>Фамилия:</strong> <?php echo $surname; ?></p>
 <p><strong>Имя:</strong> <?php echo $name; ?></p>
 <p><strong>Возраст:</strong> <?php echo $age; ?></p>

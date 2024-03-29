@@ -33,7 +33,7 @@
 
     <input type="submit" value="Добавить">
 </form>
-<table>
+<table border="1">
     <thead>
     <th>Почта</th>
     <th>Категория</th>

@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $text = $_POST['text'];
-    $word_count = str_word_count($text);
+    $word_count = str_word_count($text, 0, 'а-яёА-ЯЁ');
     $char_count = strlen($text);
 }
 ?>
