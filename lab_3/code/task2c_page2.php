@@ -1,4 +1,8 @@
 <?php
+/*
+ Заметка себе на будущее:
+ запись <li><?= $key ?>: <?= $value ?></li> равносильна записи <li><?php echo $key; ?>: <?php echo $value; ?></li>
+ */
 session_start();
 
 $userData = isset($_SESSION['user_data']) ? $_SESSION['user_data'] : [];
@@ -14,7 +18,7 @@ $userData = isset($_SESSION['user_data']) ? $_SESSION['user_data'] : [];
 <body>
 <ul>
     <?php foreach ($userData as $key => $value) : ?>
-        <li><?= $key ?>: <?= $value ?></li>
+        <li><?php echo $key; ?>: <?php echo $value; ?></li>
     <?php endforeach; ?>
 </ul>
 </body>
