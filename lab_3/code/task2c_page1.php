@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
+if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
     $data = ['Имя' => $_POST['name'], 'Возраст' => $_POST['age'], 'Зарплата' => $_POST['salary'], 'День рождения' => $_POST['dateOfBirth']];
     $_SESSION['user_data'] = $data;
