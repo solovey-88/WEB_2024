@@ -8,9 +8,9 @@ if (mysqli_connect_errno()) {
 
 // Обработка формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $category = $mysqli->real_escape_string($_POST['categories']);
+    $category = $mysqli->real_escape_string($_POST['category']);
     $title = $mysqli->real_escape_string($_POST['title']);
-    $description = $mysqli->real_escape_string($_POST['text']);
+    $description = $mysqli->real_escape_string($_POST['description']);
     $email = $mysqli->real_escape_string($_POST['email']);
 
 
@@ -64,12 +64,12 @@ $mysqli->close();
         <th>Описание</th>
         <th>Почта</th>
     </tr>
-    <?php foreach ($mas as $item):
+    <?php foreach ($mas as $ad):
         echo "<tr>";
-        echo "<td>" . ($item['category']) . "</td>";
-        echo "<td>" . ($item['title']) . "</td>";
-        echo "<td>" . ($item['description']) . "</td>";
-        echo "<td>" . ($item['email']) . "</td>";
+        echo "<td>" . ($ad['category']) . "</td>";
+        echo "<td>" . ($ad['title']) . "</td>";
+        echo "<td>" . ($ad['description']) . "</td>";
+        echo "<td>" . ($ad['email']) . "</td>";
         echo "</tr>";
     endforeach; ?>
 </table>
