@@ -1,3 +1,33 @@
+<?php
+$mysqli = new mysqli('db', 'root', 'helloworld', 'web');
+
+if (mysqli_connect_errno()) {
+    printf("Подключение к серверу MySQL невозможно. Код ошибки: %s\n", mysqli_connect_error());
+    exit;
+}
+
+// Обработка формы
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $category = $mysqli->real_escape_string($_POST['categories']);
+    $title = $mysqli->real_escape_string($_POST['title']);
+    $description = $mysqli->real_escape_string($_POST['text']);
+    $email = $mysqli->real_escape_string($_POST['email']);
+
+
+    $mysqli->query("INSERT INTO ad (category, title, description, email) VALUES ('$category', '$title', '$description', '$email')");
+}
+
+$mas = [];
+if ($result = $mysqli->query('SELECT * FROM ad ORDER BY created DESC')) {
+    while ($row = $result->fetch_assoc()) {
+        $mas[] = $row;
+    }
+    $result->close();
+}
+$mysqli->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +37,7 @@
 </head>
 <body>
 <h2>Добавить объявление</h2>
-<form action="save.php" method="post">
+<form action="index.php" method="post">
     <label for="category">Категория:</label>
     <select id="category" name="category">
         <option value="PC">PC</option>
@@ -34,31 +64,14 @@
         <th>Описание</th>
         <th>Почта</th>
     </tr>
-    <?php
-    require_once __DIR__."/vendor/autoload.php";
-    $client = new Google_Client();
-    $client->setAuthConfig("credentials.json");
-    $client->addScope(Google_Service_Sheets::SPREADSHEETS_READONLY);
-    $service = new Google_Service_Sheets($client);
-    $spreadsheetId = "1CCizKZBjFRwaZpk2ldV_oAcvaQRgoBMlc5IbhIBr9GE";
-    $range = "A1:D";
-
-    $response = $service->spreadsheets_values->get($spreadsheetId, $range);
-    $values = $response->getValues();
-
-    if (!empty($values))
-    {
-        foreach ($values as $row)
-        {
-            echo "<tr>";
-            echo "<td>{$row[0]}</td>";
-            echo "<td>{$row[1]}</td>";
-            echo "<td>{$row[2]}</td>";
-            echo "<td>{$row[3]}</td>";
-            echo "</tr>";
-        }
-    }
-    ?>
+    <?php foreach ($mas as $item):
+        echo "<tr>";
+        echo "<td>" . ($item['category']) . "</td>";
+        echo "<td>" . ($item['title']) . "</td>";
+        echo "<td>" . ($item['description']) . "</td>";
+        echo "<td>" . ($item['email']) . "</td>";
+        echo "</tr>";
+    endforeach; ?>
 </table>
 </body>
 </html>
